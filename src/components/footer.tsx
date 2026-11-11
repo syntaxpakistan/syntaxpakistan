@@ -126,7 +126,7 @@ export function Footer() {
             © 2026 Syntax of Life Private Limited. All rights reserved.
           </p>
           <p className="font-mono text-[11px] tracking-wide text-[#7a97b0]">
-            Karachi · Lahore · Islamabad — Nationwide
+            Faisalabad — Partners nationwide
           </p>
         </div>
       </div>

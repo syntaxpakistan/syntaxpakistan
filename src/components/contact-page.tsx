@@ -23,7 +23,7 @@ const CHANNELS = [
   },
 ];
 
-const CITIES = ["Karachi — Head office", "Lahore — Provider hub", "Islamabad — Partner network"];
+const CITIES = ["Faisalabad — Head office", "Partners all across Pakistan"];
 
 export function ContactPage() {
   return (

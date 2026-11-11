@@ -156,7 +156,7 @@ export function AboutPage() {
             </div>
             <div className="mt-8 flex items-center gap-3 text-[13.5px] text-body">
               <MapPin className="size-4.5 shrink-0 text-blue" />
-              Karachi · Lahore · Islamabad — and providers nationwide
+              Faisalabad head office — partners all across Pakistan
             </div>
           </Reveal>
         </div>
