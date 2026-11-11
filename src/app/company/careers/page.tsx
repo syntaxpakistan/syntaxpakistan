@@ -6,7 +6,8 @@ import { CtaForm } from "@/components/sections/cta-form";
 import { CareersPage } from "@/components/company-pages";
 
 export const metadata: Metadata = {
-  title: "Careers — biogateway",
+  title: "Careers at Syntax of Life — Biotech Jobs in Pakistan",
+  alternates: { canonical: "/company/careers" },
   description: "Join a scientist-led team building the future of multiomics in Pakistan.",
 };
 

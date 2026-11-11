@@ -49,14 +49,17 @@ const CONTENT: Record<string, Entry> = {
 const QUICK_LINKS = [
   { label: "Explore bioinformatics", href: "/bioinformatics" },
   { label: "See the platform in action", href: "/projects" },
-  { label: "Visit the marketplace", href: "/marketplace" },
-  { label: "Join the Gateway", href: "/biogateway" },
+  { label: "Meet the verified providers", href: "/partners" },
+  { label: "Request a quote", href: "/contact" },
 ];
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }): Promise<Metadata> {
   const { slug } = await params;
   const entry = CONTENT["/" + slug.join("/")];
-  return { title: entry ? `${entry.title} — biogateway` : "biogateway" };
+  return {
+    title: entry ? entry.title : "Page not found",
+    robots: { index: false, follow: true },
+  };
 }
 
 export default async function CatchAllPage({ params }: { params: Promise<{ slug: string[] }> }) {
@@ -98,7 +101,7 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
                 <Link href="/contact" className="btn-white">Contact us</Link>
               </span>
               <Link href="/bioinformatics" className="group inline-flex items-center gap-2 text-[14.5px] font-medium text-white/90 hover:text-white">
-                Browse services <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                Explore bioinformatics <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
           </div>

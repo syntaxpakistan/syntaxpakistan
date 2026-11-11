@@ -6,7 +6,8 @@ import { CtaForm } from "@/components/sections/cta-form";
 import { NewsPage } from "@/components/company-news";
 
 export const metadata: Metadata = {
-  title: "News & Events — biogateway",
+  title: "News & Events — Pakistan Biotechnology Gateway",
+  alternates: { canonical: "/company/news" },
   description: "Conferences, webinars and announcements from the Pakistan Biotechnology Gateway.",
 };
 

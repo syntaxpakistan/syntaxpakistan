@@ -6,7 +6,8 @@ import { CtaForm } from "@/components/sections/cta-form";
 import { AboutPage } from "@/components/company-pages";
 
 export const metadata: Metadata = {
-  title: "About — biogateway",
+  title: "About Us — Pakistan's Biotechnology Gateway",
+  alternates: { canonical: "/company/about" },
   description: "Pakistan's first biotechnology gateway — verified multiomics capacity, bioinformatics and scientist-led support.",
 };
 

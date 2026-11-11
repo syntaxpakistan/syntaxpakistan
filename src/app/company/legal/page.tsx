@@ -5,7 +5,8 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "Terms, Privacy & Billing — Pakistan Biotechnology Gateway",
+  title: "Terms, Privacy & Billing",
+  alternates: { canonical: "/company/legal" },
   description: "Terms of service, privacy policy and subscription/refund terms for the Pakistan Biotechnology Gateway.",
 };
 

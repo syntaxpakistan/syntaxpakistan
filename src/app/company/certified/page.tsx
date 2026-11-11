@@ -6,7 +6,8 @@ import { CtaForm } from "@/components/sections/cta-form";
 import { CertifiedPage } from "@/components/company-pages";
 
 export const metadata: Metadata = {
-  title: "Certified Service Provider — biogateway",
+  title: "Certified Service Providers — Verified Biotech Labs",
+  alternates: { canonical: "/company/certified" },
   description: "Gateway providers validated for 10x Genomics, Illumina, Olink, PacBio and Twist Bioscience workflows.",
 };
 

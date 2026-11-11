@@ -6,7 +6,8 @@ import { CtaForm } from "@/components/sections/cta-form";
 import { GrantsPage } from "@/components/company-pages";
 
 export const metadata: Metadata = {
-  title: "Grants — biogateway",
+  title: "Research Grants — Sequencing & Multiomics Funding",
+  alternates: { canonical: "/company/grants" },
   description: "Competitive grant programs for spatial transcriptomics and multiomics research.",
 };
 
