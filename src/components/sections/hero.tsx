@@ -75,13 +75,13 @@ export function Hero() {
                 </Link>
               </span>
               <Link
-                href="/services"
+                href="/bioinformatics"
                 className="group inline-flex items-center gap-2.5 text-[14.5px] font-medium text-white/90 transition-colors hover:text-white"
               >
                 <span className="grid size-8 place-items-center rounded-full border border-white/30 transition-colors group-hover:border-white/60">
                   <Play className="size-3 fill-current" />
                 </span>
-                Browse services
+                Explore bioinformatics
               </Link>
             </motion.div>
 

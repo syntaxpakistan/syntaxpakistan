@@ -320,7 +320,7 @@ const CERTS = [
       "Comprehensive variant detection — SNVs, Indels and large SVs with haplotype phasing",
       "Full-length isoform and methylation profiling in native context",
     ],
-    href: "/services/whole-genome-sequencing", cta: "Discover high-accuracy genome solutions",
+    href: "/bioinformatics/wes-analysis", cta: "Discover high-accuracy genome solutions",
   },
   {
     name: "Illumina",
@@ -331,7 +331,7 @@ const CERTS = [
       "Whole-genome sequencing — NovaSeq X+ coverage for population studies and variant discovery",
       "Whole-exome sequencing — Agilent or Twist capture with calling, annotation and CNV analysis",
     ],
-    href: "/services", cta: "Explore our sequencing services",
+    href: "/bioinformatics", cta: "Explore our sequencing services",
   },
   {
     name: "Olink",
@@ -342,7 +342,7 @@ const CERTS = [
       "Integrated workflow — assay setup through Illumina sequencing and Olink Insight analysis",
       "Fast turnaround — results typically within ~4 weeks",
     ],
-    href: "/services", cta: "Know more about our proteomics services",
+    href: "/contact", cta: "Know more about our proteomics services",
   },
   {
     name: "Twist Bioscience",
@@ -353,7 +353,7 @@ const CERTS = [
       "Whole-genome sequencing — consistent performance across GC-rich and challenging regions",
       "RNA sequencing — strand-specific profiling of coding and non-coding RNAs at low input",
     ],
-    href: "/services/whole-genome-sequencing", cta: "Know more",
+    href: "/bioinformatics/wes-analysis", cta: "Know more",
   },
 ];
 

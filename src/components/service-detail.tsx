@@ -8,7 +8,8 @@ import {
 import { Reveal, Stagger, fadeUp, AnimatedCounter } from "@/components/motion-primitives";
 import { motion } from "motion/react";
 import { FaqList } from "@/components/faq-item";
-import { SERVICE_PAGES, type ServicePage } from "@/lib/service-pages";
+import { BIO_PAGES } from "@/lib/bioinformatics-pages";
+import type { ServicePage } from "@/lib/service-pages";
 
 const STEP_ICONS = [FileSearch, PackageCheck, Radar, GitCompareArrows, BarChart3];
 
@@ -34,8 +35,8 @@ function MarqueeRow({ items, reverse = false }: { items: string[]; reverse?: boo
 
 export function ServiceDetail({ s }: { s: ServicePage }) {
   const sec = s.sections ?? {};
-  const related = s.related ?? SERVICE_PAGES.filter((p) => p.slug !== s.slug).slice(0, 6)
-    .map((p) => ({ href: `/services/${p.slug}`, eyebrow: p.eyebrow, title: p.title }));
+  const related = s.related ?? BIO_PAGES.filter((p) => p.slug !== s.slug).slice(0, 6)
+    .map((p) => ({ href: `/bioinformatics/${p.slug}`, eyebrow: p.eyebrow, title: p.title }));
   return (
     <>
       {/* hero */}
@@ -44,7 +45,7 @@ export function ServiceDetail({ s }: { s: ServicePage }) {
         <div className="glow-orb left-[-320px] top-[-340px] size-[500px] bg-blue-bright/15" />
         <div className="glow-orb right-[5%] bottom-[-150px] size-[350px] bg-mint/10" />
         <div className="container-x relative">
-          <Link href={sec.backHref ?? "/services"} className="inline-flex items-center gap-1.5 text-[12.5px] font-medium text-[#a2c1d7] transition-colors hover:text-white">
+          <Link href={sec.backHref ?? "/bioinformatics"} className="inline-flex items-center gap-1.5 text-[12.5px] font-medium text-[#a2c1d7] transition-colors hover:text-white">
             <ChevronDown className="size-3.5 rotate-90" /> {sec.backLabel ?? "All services"}
           </Link>
           <Reveal>

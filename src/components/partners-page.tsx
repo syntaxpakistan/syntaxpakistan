@@ -186,7 +186,7 @@ export function PartnersPage() {
             <span className="btn-wrap">
               <Link href="/contact" className="btn-white">Become a partner</Link>
             </span>
-            <Link href="/services" className="btn-ghost on-dark">Browse services</Link>
+            <Link href="/bioinformatics" className="btn-ghost on-dark">Explore bioinformatics</Link>
           </Reveal>
         </div>
       </section>

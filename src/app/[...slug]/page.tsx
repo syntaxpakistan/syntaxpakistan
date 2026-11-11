@@ -47,8 +47,8 @@ const CONTENT: Record<string, Entry> = {
 };
 
 const QUICK_LINKS = [
-  { label: "Browse all services", href: "/services" },
-  { label: "Explore the platform", href: "/platform" },
+  { label: "Explore bioinformatics", href: "/bioinformatics" },
+  { label: "See the platform in action", href: "/projects" },
   { label: "Visit the marketplace", href: "/marketplace" },
   { label: "Join the Gateway", href: "/biogateway" },
 ];
@@ -97,7 +97,7 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
               <span className="btn-wrap">
                 <Link href="/contact" className="btn-white">Contact us</Link>
               </span>
-              <Link href="/services" className="group inline-flex items-center gap-2 text-[14.5px] font-medium text-white/90 hover:text-white">
+              <Link href="/bioinformatics" className="group inline-flex items-center gap-2 text-[14.5px] font-medium text-white/90 hover:text-white">
                 Browse services <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>

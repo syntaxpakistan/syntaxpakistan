@@ -10,7 +10,7 @@ export default function NotFound() {
       </p>
       <div className="mt-8 flex gap-3">
         <Link href="/" className="btn-primary !py-2.5 text-[13px]">Go home</Link>
-        <Link href="/services" className="btn-secondary !py-2.5 text-[13px]">Explore services</Link>
+        <Link href="/bioinformatics" className="btn-secondary !py-2.5 text-[13px]">Explore bioinformatics</Link>
       </div>
     </main>
   );

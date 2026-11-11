@@ -10,16 +10,16 @@ const FEATURED = [
     tags: "Illumina • Oxford Nanopore • PacBio",
     title: "Whole-Genome Sequencing",
     desc: "Sequence microbial, plant and animal genomes for assembly or resequencing — long-read and short-read workflows.",
-    cta: "Browse WGS",
-    href: "/services/whole-genome-sequencing",
+    cta: "Request WGS",
+    href: "/contact#quote-form",
     icon: Dna,
   },
   {
     tags: "Shotgun • 16S rRNA • ITS • 18S",
     title: "Metagenomics & Microbiome Profiling",
     desc: "Characterise microbial communities in mixed samples — shotgun metagenomics and amplicon profiling.",
-    cta: "Browse Metagenomics",
-    href: "/services/metagenomics",
+    cta: "Request Metagenomics",
+    href: "/contact#quote-form",
     icon: FlaskConical,
   },
 ];
@@ -45,8 +45,8 @@ export function FeaturedServices() {
                 National capacity, <em className="grad-text">one RFQ away</em>
               </h2>
             </div>
-            <Link href="/services" className="inline-flex items-center gap-1.5 text-[14px] font-medium text-ink hover:text-blue">
-              View all services <ArrowRight className="size-4" />
+            <Link href="/bioinformatics" className="inline-flex items-center gap-1.5 text-[14px] font-medium text-ink hover:text-blue">
+              Explore bioinformatics <ArrowRight className="size-4" />
             </Link>
           </div>
         </Reveal>
@@ -76,7 +76,7 @@ export function FeaturedServices() {
             {ICON_CHIPS.map((c) => (
               <Link
                 key={c.label}
-                href="/services"
+                href="/contact"
                 className="group inline-flex items-center gap-2.5 rounded-full border border-line bg-surface px-4 py-2.5 text-[13px] font-medium text-ink transition-all hover:border-navy-3 hover:shadow-md"
               >
                 <c.icon className="size-4 text-ink transition-colors group-hover:text-blue" />

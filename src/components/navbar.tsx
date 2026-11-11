@@ -52,41 +52,6 @@ type NavEntry = {
 
 const NAV: NavEntry[] = [
   {
-    label: "Services",
-    featured: {
-      title: "All sequencing services",
-      desc: "Every assay category across the verified network, one RFQ away",
-      cta: "View all services",
-      href: "/services",
-    },
-    groups: [
-      {
-        items: [
-          { icon: LayoutGrid, title: "All Services", desc: "The complete sequencing catalog", href: "/services" },
-          { icon: Dna, title: "Whole-Genome Sequencing", desc: "Microbial, plant & animal genomes", href: "/services/whole-genome-sequencing" },
-          { icon: Radar, title: "Metagenomics & Microbiome", desc: "Shotgun & amplicon profiling", href: "/services/metagenomics" },
-          { icon: Activity, title: "Transcriptomics", desc: "Bulk RNA-Seq & long-read isoforms", href: "/services/transcriptomics" },
-        ],
-      },
-      {
-        items: [
-          { icon: Atom, title: "Epigenomics", desc: "ONT & Illumina methylation", href: "/services/epigenomics" },
-          { icon: Ruler, title: "Sanger Sequencing", desc: "PCR, plasmid & barcode reads", href: "/services/sanger" },
-          { icon: Zap, title: "Sequencing Only", desc: "Your libraries, our platforms", href: "/services/sequencing-only" },
-          { icon: Workflow, title: "Bioinformatics & Analysis", desc: "Assembly, variants & more", href: "/bioinformatics" },
-        ],
-      },
-    ],
-    bottom: {
-      heading: "Certified service programs",
-      cards: [
-        { title: "ONT", desc: "Oxford Nanopore long-read workflows.", href: "/services/sequencing-only", tint: "mint" },
-        { title: "Sanger-Seq", desc: "Capillary Sanger sequencing & fragment analysis.", href: "/services/sanger", tint: "lavender" },
-        { title: "Seq Studio", desc: "Applied Biosystems SeqStudio benchtop runs.", href: "/services/sanger", tint: "peach" },
-      ],
-    },
-  },
-  {
     label: "Multiomics",
     featured: {
       title: "Multiomics solutions",
@@ -148,7 +113,7 @@ const NAV: NavEntry[] = [
         heading: "Explore",
         items: [
           { icon: MonitorPlay, title: "Posters & Videos", desc: "Conference posters & webinars", href: "/resources/posters-videos" },
-          { icon: HelpCircle, title: "FAQs", desc: "Verification, quoting & data policy", href: "/services#faq" },
+          { icon: HelpCircle, title: "FAQs", desc: "Verification, quoting & data policy", href: "/contact" },
           { icon: Gift, title: "Referral Program", desc: "Credit for every successful referral", href: "/resources/referral" },
         ],
       },

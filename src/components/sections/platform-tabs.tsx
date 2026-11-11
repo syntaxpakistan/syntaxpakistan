@@ -156,7 +156,7 @@ export function PlatformTabs() {
                     <h4 className="mt-4 font-display text-[15.5px] font-medium tracking-tight text-ink">{f.title}</h4>
                     <p className="mt-2.5 text-[13.5px] leading-relaxed text-body">{f.desc}</p>
                     <Link
-                      href="/platform"
+                      href="/projects"
                       className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-medium text-blue hover:text-ink"
                     >
                       Learn more <ArrowRight className="size-3.5" />

@@ -112,8 +112,8 @@ export const BIO_PAGES: ServicePage[] = [
     related: [
       BIO_RELATED_BASE[1],
       BIO_RELATED_BASE[2],
-      { href: "/services/transcriptomics", eyebrow: "Transcriptomics", title: "Transcriptomics Services" },
-      { href: "/services/whole-genome-sequencing", eyebrow: "Genomics", title: "Whole-Genome Sequencing" },
+      { href: "/bioinformatics/rna-analysis", eyebrow: "Transcriptomics", title: "Transcriptomics Services" },
+      { href: "/bioinformatics/wes-analysis", eyebrow: "Genomics", title: "Whole-Genome Sequencing" },
     ],
     subs: [
       {
@@ -212,8 +212,8 @@ export const BIO_PAGES: ServicePage[] = [
       relatedTitle: "Spatial & analysis services",
     },
     related: [
-      { href: "/services/transcriptomics", eyebrow: "Transcriptomics", title: "Transcriptomics Services" },
-      { href: "/services/epigenomics", eyebrow: "Epigenomics", title: "DNA Methylation Profiling" },
+      { href: "/bioinformatics/rna-analysis", eyebrow: "Transcriptomics", title: "Transcriptomics Services" },
+      { href: "/bioinformatics", eyebrow: "Epigenomics", title: "DNA Methylation Profiling" },
       BIO_RELATED_BASE[0],
       BIO_RELATED_BASE[1],
     ],
@@ -341,10 +341,10 @@ export const BIO_PAGES: ServicePage[] = [
       relatedTitle: "Sequencing & analysis services",
     },
     related: [
-      { href: "/services/whole-genome-sequencing", eyebrow: "Genomics", title: "Whole-Genome Sequencing (WGS)" },
-      { href: "/services/metagenomics", eyebrow: "Microbiome", title: "Metagenomics & Microbiome Profiling" },
-      { href: "/services/transcriptomics", eyebrow: "Transcriptomics", title: "Transcriptomics Services" },
-      { href: "/services/sequencing-only", eyebrow: "Sequence-only", title: "Sequencing Only" },
+      { href: "/bioinformatics/wes-analysis", eyebrow: "Genomics", title: "Whole-Genome Sequencing (WGS)" },
+      { href: "/bioinformatics", eyebrow: "Microbiome", title: "Metagenomics & Microbiome Profiling" },
+      { href: "/bioinformatics/rna-analysis", eyebrow: "Transcriptomics", title: "Transcriptomics Services" },
+      { href: "/bioinformatics", eyebrow: "Sequence-only", title: "Sequencing Only" },
       BIO_RELATED_BASE[0],
       BIO_RELATED_BASE[2],
     ],

@@ -28,11 +28,10 @@ const COLUMNS: { heading: string; links: { label: string; href: string }[] }[] =
   {
     heading: "Platform",
     links: [
-      { label: "Platform Overview", href: "/platform" },
-      { label: "RFQ Engine", href: "/platform/rfq" },
-      { label: "Blind Quoting", href: "/platform/quoting" },
+      { label: "Case Study", href: "/projects" },
+      { label: "Bioinformatics", href: "/bioinformatics" },
       { label: "Partner Directory", href: "/partners" },
-      { label: "Services", href: "/services" },
+      { label: "Request a Quote", href: "/contact#quote-form" },
     ],
   },
   {
