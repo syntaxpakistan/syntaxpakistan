@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = ""; // e.g. "923001234567" — international format, no + or spaces
+const WHATSAPP_NUMBER = "923347771013"; // international format, no + or spaces
 
 export function WhatsAppFloat() {
   if (!WHATSAPP_NUMBER) return null;
