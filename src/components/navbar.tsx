@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import {
@@ -151,12 +151,31 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSection, setMobileSection] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const cancelClose = () => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  };
+  const scheduleClose = () => {
+    cancelClose();
+    closeTimer.current = setTimeout(() => setOpen(null), 300);
+  };
+  const openMenu = (label: string | null) => {
+    cancelClose();
+    setOpen(label);
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelClose();
+    };
   }, []);
 
   const active = NAV.find((n) => n.label === open);
@@ -169,7 +188,7 @@ export function Navbar() {
           scrolled ? "max-w-[1100px]" : "max-w-[1200px]"
         )}
       >
-        <div className="relative flex h-[76px] items-center justify-between gap-4" onMouseLeave={() => setOpen(null)}>
+        <div className="relative flex h-[76px] items-center justify-between gap-4" onMouseLeave={scheduleClose}>
           <nav
             className={cn(
               "flex h-[76px] flex-1 items-center justify-between rounded-full px-5 transition-all duration-500",
@@ -183,7 +202,7 @@ export function Navbar() {
 
             {/* Desktop nav */}
             <ul className="hidden items-center lg:flex">
-              <li onMouseEnter={() => setOpen(null)}>
+              <li onMouseEnter={() => openMenu(null)}>
                 <Link
                   href="/partners"
                   className="flex items-center gap-1 rounded-full px-3 py-2 text-[13.5px] text-white/70 transition-colors hover:text-white"
@@ -191,7 +210,7 @@ export function Navbar() {
                   Partners
                 </Link>
               </li>
-              <li onMouseEnter={() => setOpen(null)}>
+              <li onMouseEnter={() => openMenu(null)}>
                 <Link
                   href="/projects"
                   className="flex items-center gap-1 rounded-full px-3 py-2 text-[13.5px] text-white/70 transition-colors hover:text-white"
@@ -200,7 +219,7 @@ export function Navbar() {
                 </Link>
               </li>
               {NAV.map((entry) => (
-                <li key={entry.label} onMouseEnter={() => setOpen(entry.label)}>
+                <li key={entry.label} onMouseEnter={() => openMenu(entry.label)}>
                   <button
                     className={cn(
                       "flex items-center gap-1 rounded-full px-3 py-2 text-[13.5px] transition-colors",
@@ -228,7 +247,7 @@ export function Navbar() {
           </nav>
 
           {/* Right actions — outside the pill, on navy */}
-          <div className="hidden items-center lg:flex" onMouseEnter={() => setOpen(null)}>
+          <div className="hidden items-center lg:flex" onMouseEnter={() => openMenu(null)}>
             <ThemeToggle onDark />
           </div>
 
@@ -241,7 +260,8 @@ export function Navbar() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 8, scale: 0.985 }}
                 transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute left-0 top-[84px] w-[min(860px,94vw)]"
+                className="absolute left-0 top-[76px] w-[min(860px,94vw)] pt-2"
+                onMouseEnter={cancelClose}
               >
                 <div className="overflow-hidden rounded-2xl bg-surface p-4 shadow-2xl shadow-navy/30">
                   <div className={cn("grid gap-4", active.featured ? "grid-cols-[220px_1fr]" : "grid-cols-1")}>

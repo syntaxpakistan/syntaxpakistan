@@ -54,8 +54,8 @@ export function Enterprise() {
         </Stagger>
 
         <Reveal delay={2} className="mt-10">
-          <Link href="/company/trust" className="btn-ghost on-dark">
-            Read the Trust & Data Policy <ArrowRight className="size-4" />
+          <Link href="/company/legal/data" className="btn-ghost on-dark">
+            Read the Data & Ethics Policy <ArrowRight className="size-4" />
           </Link>
         </Reveal>
       </div>

@@ -57,8 +57,10 @@ const COLUMNS: { heading: string; links: { label: string; href: string }[] }[] =
     links: [
       { label: "About Syntax of Life", href: "/company/about" },
       { label: "Contact", href: "/company/contact" },
-      { label: "Trust & Data Policy", href: "/company/trust" },
-      { label: "Terms & Privacy", href: "/company/legal" },
+      { label: "Data & Ethics Policy", href: "/company/legal/data" },
+      { label: "Terms of Service", href: "/company/legal" },
+      { label: "Privacy Policy", href: "/company/legal/privacy" },
+      { label: "Compliance", href: "/company/legal/compliance" },
     ],
   },
 ];

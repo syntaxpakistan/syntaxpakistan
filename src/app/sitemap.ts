@@ -30,6 +30,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "contact",
     "grants",
     "legal",
+    "legal/privacy",
+    "legal/data",
+    "legal/compliance",
     "news",
   ].map((slug) => ({
     url: `${SITE_URL}/company/${slug}`,

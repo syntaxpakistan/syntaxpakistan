@@ -37,8 +37,6 @@ const CONTENT: Record<string, Entry> = {
   "/company/careers": e("Company", "Careers", "Join the team building the national biotech gateway.", ["Open roles", "Life at Syntax", "How we hire"]),
   "/company/certified": e("Company", "Certified service provider program", "Industry-validated workflows for the platforms you trust — and what certification means here.", ["Platform validation criteria", "In-house workflow audits", "Certified partner list"]),
   "/company/contact": e("Company", "Contact", "Talk to the platform team about your project, onboarding or partnership.", ["Response within one business day", "Project scoping calls", "Supplier & provider onboarding"]),
-  "/company/trust": e("Company", "Trust & data policy", "What we store, what we never store, and how your project data is governed.", ["No raw genomic files hosted", "Documents only, ≤25MB", "Admin-audited access"]),
-  "/company/legal": e("Company", "Terms & privacy", "The legal framework governing marketplace use, data handling and disputes.", ["Terms of service", "Privacy policy", "Marketplace rules"]),
   "/contact": e("Contact", "Talk to us", "Questions about a project, onboarding or a partnership — the team replies within one business day.", ["Project scoping", "Onboarding help", "Partnership enquiries"]),
   "/platform/rfq": e("Platform", "RFQ engine", "Structured requests precisely routed to providers whose capabilities match your study.", ["Guided request builder", "Capability matching", "Attachment support ≤25MB"]),
   "/platform/quoting": e("Platform", "Blind quoting", "Competing quotes isolated at the database layer — providers never see rival bids.", ["Database-level isolation", "Side-by-side comparison", "Merit-based selection"]),
