@@ -3,7 +3,7 @@
 import Link from "next/link";
 import {
   ArrowRight, Award, BadgeCheck, Briefcase, CircleCheck, Dna, FlaskConical,
-  GraduationCap, Handshake, HeartPulse, Laptop, MapPin, Microscope, Sparkles,
+  GraduationCap, Handshake, HeartPulse, Laptop, MapPin, Sparkles,
 } from "lucide-react";
 import { Reveal, Stagger, fadeUp } from "@/components/motion-primitives";
 import { motion } from "motion/react";
@@ -43,14 +43,6 @@ const VALUES = [
   { icon: HeartPulse, title: "Dedicated to narrowing healthcare disparities", desc: "Local capacity and transparent pricing bring advanced genomics within reach of every Pakistani lab." },
 ];
 
-const TEAM = [
-  { role: "Chief Science Officer", focus: "Scientific direction, assay validation and multiomics study design across the network." },
-  { role: "Chief Financial Officer", focus: "Sustainable marketplace economics and transparent pricing governance." },
-  { role: "VP, Commercial & Partnerships", focus: "Provider onboarding, institutional partnerships and customer success." },
-  { role: "Director, Research & Development", focus: "New service categories, platform evaluation and workflow optimization." },
-  { role: "Director, Bioinformatics", focus: "Analysis pipelines, QC standards and publication-ready reporting." },
-];
-
 const TRUSTED = ["Universities", "Teaching Hospitals", "Research Institutes", "Pharma & Biotech", "CROs", "Diagnostic Labs", "Agri-genomics", "Public Health"];
 
 export function AboutPage() {
@@ -86,27 +78,29 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* leadership */}
+      {/* who we are */}
       <section className="border-t border-line bg-surface py-24">
         <div className="container-x">
           <Reveal>
             <p className="eyebrow">Our team of experts</p>
-            <h2 className="h-section mt-4">Leadership</h2>
-            <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-body">
-              A scientist-led team spanning wet-lab operations, computational biology and marketplace governance.
+            <h2 className="h-section mt-4 max-w-2xl">Built by scientists, run to a scientist&rsquo;s standard</h2>
+          </Reveal>
+          <Reveal delay={1} className="mt-8 max-w-3xl space-y-5 text-[15.5px] leading-relaxed text-body">
+            <p>
+              Syntax of Life is a scientist-built biotechnology company operating Pakistan&rsquo;s first
+              federated multiomics network. Our team spans molecular biology, genomics, computational
+              biology and quality science — people who have run the workflows they now govern. From study
+              design and assay selection through sequencing, analysis and publication-ready reporting,
+              every project is supervised end-to-end by doctoral-level scientists across the verified
+              network.
+            </p>
+            <p>
+              We hold ourselves to the standards we demand of our providers: real QC metrics at every gate,
+              honest timelines, sealed and auditable pricing, and data you can defend in a reviewer&rsquo;s
+              comments. That is what a national biotechnology gateway should be — deep scientific capability,
+              institutional trust, and the full toolchain from sample to answer, all in one place.
             </p>
           </Reveal>
-          <Stagger className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {TEAM.map((t) => (
-              <motion.div key={t.role} variants={fadeUp} className="card card-hover p-6">
-                <span className="grid size-10 place-items-center rounded-xl bg-navy text-yellow">
-                  <Microscope className="size-5" strokeWidth={1.8} />
-                </span>
-                <h3 className="mt-4 text-[15px] font-semibold text-ink">{t.role}</h3>
-                <p className="mt-2.5 text-[13px] leading-relaxed text-body">{t.focus}</p>
-              </motion.div>
-            ))}
-          </Stagger>
         </div>
       </section>
 
