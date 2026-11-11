@@ -31,7 +31,7 @@ export function ContactPage() {
       {/* hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-navy-2 via-navy to-navy pb-20 pt-[185px]">
         <div className="grid-lines on-dark absolute inset-0" />
-        <div className="glow-orb left-[10%] top-[-200px] size-[500px] bg-blue-bright/15" />
+        <div className="glow-orb left-[-320px] top-[-340px] size-[500px] bg-blue-bright/15" />
         <div className="container-x relative">
           <Reveal>
             <p className="mt-5 inline-block rounded-full border border-white/25 px-4 py-1.5 text-[10.5px] font-medium uppercase tracking-[0.14em] text-[#c5d2e1]">

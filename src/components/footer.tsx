@@ -70,7 +70,7 @@ export function Footer() {
       <div className="rainbow-line" />
       <div className="container-x py-14 sm:py-16">
         <Link href="/" className="inline-block" aria-label="Syntax of Life home">
-          <img src="/brand/logo-dark.png" alt="Syntax of Life" className="h-20 w-auto sm:h-24" />
+          <img src="/brand/logo-dark.png" alt="Syntax of Life" className="h-28 w-auto sm:h-36" />
         </Link>
         <div className="mt-10 grid gap-10 sm:mt-12 lg:grid-cols-[1fr_repeat(4,auto)] lg:gap-8">
           <div>

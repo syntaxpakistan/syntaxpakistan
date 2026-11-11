@@ -145,7 +145,7 @@ export function ServicesPage() {
         {/* hero */}
         <section className="relative overflow-hidden bg-gradient-to-b from-navy-2 via-navy to-navy pb-20 pt-[185px]">
           <div className="grid-lines on-dark absolute inset-0" />
-          <div className="glow-orb left-[10%] top-[-200px] size-[500px] bg-blue-bright/15" />
+          <div className="glow-orb left-[-320px] top-[-340px] size-[500px] bg-blue-bright/15" />
           <div className="glow-orb right-[5%] bottom-[-150px] size-[350px] bg-mint/10" />
           <div className="container-x relative">
             <motion.span

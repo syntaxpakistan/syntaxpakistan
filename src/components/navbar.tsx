@@ -213,7 +213,7 @@ export function Navbar() {
           >
             {/* Logo */}
             <Link href="/" className="flex items-center" aria-label="Syntax of Life home">
-              <img src="/brand/logo-dark.png" alt="Syntax of Life" className="h-14 w-auto" />
+              <img src="/brand/logo-dark.png" alt="Syntax of Life" className="h-16 w-auto" />
             </Link>
 
             {/* Desktop nav */}
@@ -224,6 +224,14 @@ export function Navbar() {
                   className="flex items-center gap-1 rounded-full px-3 py-2 text-[13.5px] text-white/70 transition-colors hover:text-white"
                 >
                   Partners
+                </Link>
+              </li>
+              <li onMouseEnter={() => setOpen(null)}>
+                <Link
+                  href="/projects"
+                  className="flex items-center gap-1 rounded-full px-3 py-2 text-[13.5px] text-white/70 transition-colors hover:text-white"
+                >
+                  Projects
                 </Link>
               </li>
               {NAV.map((entry) => (
@@ -365,6 +373,14 @@ export function Navbar() {
                     className="flex w-full items-center justify-between px-2 py-3.5 text-[15px] font-semibold text-ink"
                   >
                     Partners
+                    <ArrowRight className="size-4 text-muted" />
+                  </Link>
+                  <Link
+                    href="/projects"
+                    onClick={() => setMobileOpen(false)}
+                    className="flex w-full items-center justify-between px-2 py-3.5 text-[15px] font-semibold text-ink"
+                  >
+                    Projects
                     <ArrowRight className="size-4 text-muted" />
                   </Link>
                 </div>

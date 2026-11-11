@@ -26,7 +26,7 @@ export function Hero() {
     <section className="relative overflow-hidden bg-gradient-to-b from-navy-2 via-navy to-navy pb-24 pt-[190px] sm:pt-[210px]">
       {/* backdrop */}
       <div className="grid-lines on-dark absolute inset-0" />
-      <div className="glow-orb left-[-120px] top-[-200px] size-[560px] bg-blue-bright/15" />
+      <div className="glow-orb left-[-320px] top-[-340px] size-[560px] bg-blue-bright/15" />
       <div className="glow-orb right-[-100px] top-[30%] size-[400px] bg-mint/8" />
       <div className="glow-orb left-[30%] bottom-[-200px] size-[420px] bg-navy-3/60" />
 

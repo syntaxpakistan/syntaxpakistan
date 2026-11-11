@@ -76,7 +76,7 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
       <main className="flex-1">
         <section className="relative overflow-hidden bg-gradient-to-b from-navy-2 via-navy to-navy pb-20 pt-[185px]">
           <div className="grid-lines on-dark absolute inset-0" />
-          <div className="glow-orb left-[10%] top-[-200px] size-[500px] bg-blue-bright/15" />
+          <div className="glow-orb left-[-320px] top-[-340px] size-[500px] bg-blue-bright/15" />
           <div className="glow-orb right-[5%] bottom-[-150px] size-[350px] bg-mint/10" />
           <div className="container-x relative">
             <span className="inline-block rounded-full border border-white/25 px-4 py-1.5 text-[10.5px] font-medium uppercase tracking-[0.14em] text-[#c5d2e1]">
