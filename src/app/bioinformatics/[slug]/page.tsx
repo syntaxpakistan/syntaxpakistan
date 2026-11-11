@@ -14,7 +14,18 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const s = getBioPage(slug);
-  return s && slug !== "overview" ? { title: `${s.title} — biogateway`, description: s.tagline } : {};
+  if (!s || slug === "overview") return {};
+  return {
+    title: `${s.title} in Pakistan`,
+    description: s.tagline,
+    alternates: { canonical: `/bioinformatics/${slug}` },
+    openGraph: {
+      title: `${s.title} in Pakistan | Syntax of Life`,
+      description: s.tagline,
+      url: `/bioinformatics/${slug}`,
+      images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    },
+  };
 }
 
 export default async function BioDetailPage({ params }: { params: Promise<{ slug: string }> }) {

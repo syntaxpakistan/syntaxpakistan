@@ -9,8 +9,15 @@ import { getBioPage } from "@/lib/bioinformatics-pages";
 const overview = getBioPage("overview")!;
 
 export const metadata: Metadata = {
-  title: `${overview.title} — biogateway`,
+  title: "Bioinformatics Services in Pakistan",
   description: overview.tagline,
+  alternates: { canonical: "/bioinformatics" },
+  openGraph: {
+    title: "Bioinformatics Services in Pakistan | Syntax of Life",
+    description: overview.tagline,
+    url: "/bioinformatics",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+  },
 };
 
 export default function BioinformaticsPage() {
