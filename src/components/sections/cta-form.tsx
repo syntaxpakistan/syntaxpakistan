@@ -11,33 +11,44 @@ const BENEFITS = [
   "Run by accredited facilities across the nationwide network",
 ];
 
+const FORM_ENDPOINT = "https://formsubmit.co/ajax/info@syntaxpakistan.com";
+
 export function CtaForm({ type = "quote" }: { type?: "quote" | "contact" }) {
   const isContact = type === "contact";
-  const [sent, setSent] = useState(false);
+  const [state, setState] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
-    if (String(fd.get("website") || "")) { setSent(true); return; }
+    if (String(fd.get("website") || "")) { setState("sent"); return; }
     const name = `${fd.get("firstName") ?? ""} ${fd.get("lastName") ?? ""}`.trim();
     const org = String(fd.get("org") ?? "");
     const email = String(fd.get("email") ?? "");
     const interest = String(fd.get("interest") ?? "");
     const message = String(fd.get("message") ?? "");
-    const to = isContact ? "contact@syntaxpakistan.com" : "info@syntaxpakistan.com";
-    const subject = isContact
-      ? `Website message — ${name}${org ? ` (${org})` : ""}`
-      : `Quote request — ${name}${org ? ` (${org})` : ""}`;
-    const body = [
-      `Name: ${name}`,
-      org && `Organization: ${org}`,
-      `Email: ${email}`,
-      interest && `Area of interest: ${interest}`,
-      "",
-      message,
-    ].filter((l) => l !== undefined).join("\n");
-    window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setSent(true);
+    const kind = isContact ? "Website message" : "Quote request";
+
+    setState("sending");
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          _subject: `${kind} — ${name}${org ? ` (${org})` : ""}`,
+          _replyto: email,
+          _captcha: "false",
+          type: kind,
+          name,
+          organization: org,
+          email,
+          interest,
+          message,
+        }),
+      });
+      setState(res.ok ? "sent" : "error");
+    } catch {
+      setState("error");
+    }
   }
 
   return (
@@ -81,13 +92,12 @@ export function CtaForm({ type = "quote" }: { type?: "quote" | "contact" }) {
                   {isContact ? "Send us a message" : "Request a quote"}
                 </p>
 
-                {sent ? (
+                {state === "sent" ? (
                   <div className="mt-8 rounded-xl border border-mint/30 bg-mint/10 p-6 text-center">
                     <CircleCheck className="mx-auto size-8 text-mint" />
-                    <p className="mt-3 text-[15px] font-semibold text-white">Almost done</p>
+                    <p className="mt-3 text-[15px] font-semibold text-white">Request received</p>
                     <p className="mt-1.5 text-[13px] leading-relaxed text-[#a2c1d7]">
-                      Your email app should have opened with everything pre-filled — just press send
-                      and a specialist will reply within one business day.
+                      Thank you — a specialist will reply to your email within one business day.
                     </p>
                   </div>
                 ) : (
@@ -135,12 +145,19 @@ export function CtaForm({ type = "quote" }: { type?: "quote" | "contact" }) {
                       />
                     </div>
 
+                    {state === "error" && (
+                      <p className="rounded-lg border border-red-400/30 bg-red-400/10 px-3.5 py-2.5 text-[12.5px] text-red-200">
+                        Something went wrong — please try again or email us directly at{" "}
+                        <a href="mailto:info@syntaxpakistan.com" className="underline">info@syntaxpakistan.com</a>.
+                      </p>
+                    )}
                     <button
                       type="submit"
-                      className="btn-primary w-full justify-center !py-3.5"
+                      disabled={state === "sending"}
+                      className="btn-primary w-full justify-center !py-3.5 disabled:opacity-60"
                     >
                       <ArrowRight className="size-4" />
-                      {isContact ? "Send message" : "Request a quote"}
+                      {state === "sending" ? "Sending…" : isContact ? "Send message" : "Request a quote"}
                     </button>
                     <p className="text-center text-[11px] leading-relaxed text-[#7a97b0]">
                       No raw genomic data is ever uploaded — documents only (≤25MB).

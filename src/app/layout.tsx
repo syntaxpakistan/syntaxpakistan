@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk, Geist_Mono } from "next/font/google";
 import { Providers } from "@/components/providers";
+import { WhatsAppFloat } from "@/components/whatsapp-float";
 import "./globals.css";
 
 const helixa = Inter({
@@ -106,6 +107,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           />
         </noscript>
         <Providers>{children}</Providers>
+        <WhatsAppFloat />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

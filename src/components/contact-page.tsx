@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Clock3, MapPin, MessagesSquare, PackageCheck, Users } from "lucide-react";
+import { ArrowRight, Clock3, Mail, MapPin, MessagesSquare, PackageCheck, Users } from "lucide-react";
 import { Reveal, Stagger, fadeUp } from "@/components/motion-primitives";
 import { motion } from "motion/react";
 
@@ -87,6 +87,12 @@ export function ContactPage() {
                 ))}
               </ul>
               <p className="mt-6 flex items-center gap-3 border-t border-line pt-5 text-[13px] text-muted">
+                <Mail className="size-4 shrink-0" />
+                <a href="mailto:info@syntaxpakistan.com" className="font-medium text-blue hover:text-ink">
+                  info@syntaxpakistan.com
+                </a>
+              </p>
+              <p className="mt-3 flex items-center gap-3 text-[13px] text-muted">
                 <Clock3 className="size-4 shrink-0" /> Replies within one business day, Monday–Friday
               </p>
             </div>
