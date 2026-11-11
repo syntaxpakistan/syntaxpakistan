@@ -4,8 +4,8 @@ import Link from "next/link";
 import {
   ArrowRight, ArrowUpRight, BadgeCheck, Bell, Boxes, ClipboardList,
   Database, Eye, EyeOff, FileCheck, FlaskConical, Gavel,
-  Handshake, Lock, Microscope, Receipt, ShieldCheck,
-  Star, Store, TestTubes, Timer, Truck, UserCheck, Workflow,
+  Handshake, Lock, Receipt, ShieldCheck,
+  Star, TestTubes, Timer, Truck, UserCheck, Workflow,
 } from "lucide-react";
 
 import { Reveal, Stagger } from "@/components/motion-primitives";
@@ -19,13 +19,6 @@ const META = [
   { k: "Status", v: "Live in production" },
   { k: "Coverage", v: "Sequencing · analysis · supplies" },
   { k: "Access", v: "Public registry + member portals" },
-];
-
-const STATS = [
-  { v: "3", l: "Role-based portals" },
-  { v: "35", l: "Data models" },
-  { v: "8", l: "Lab work stages" },
-  { v: "20+", l: "Notification events" },
 ];
 
 const PROBLEMS = [
@@ -72,44 +65,6 @@ const LOOP = [
     icon: FileCheck,
     t: "Release results",
     d: "Files upload as drafts, release to the customer only when the lab decides. Milestone invoicing, payment verification and a closing review complete the loop.",
-  },
-];
-
-const PORTALS = [
-  {
-    icon: Microscope,
-    name: "Customer portal",
-    href: "/dashboard",
-    tag: "Researchers · universities · hospitals",
-    points: [
-      "Post RFQs — targeted routing or the open request board",
-      "Compare blind quotes side-by-side, award with one click",
-      "Track stages, QC gates, shipping and released results",
-      "Milestone invoices, payment reporting and reviews",
-    ],
-  },
-  {
-    icon: FlaskConical,
-    name: "Lab portal",
-    href: "/lab",
-    tag: "Sequencing & bioinformatics providers",
-    points: [
-      "Routed RFQ inbox + open board — quote only what fits",
-      "Accept or decline awards; labs stay independent",
-      "Run the work-stage ladder, QC records and result drafts",
-      "Issue milestone invoices, verify payments, receive payouts",
-    ],
-  },
-  {
-    icon: Store,
-    name: "Supplier portal",
-    href: "/supplier",
-    tag: "Indigenous reagent & kit suppliers",
-    points: [
-      "Product catalog — stock status, lead times, catalog numbers",
-      "Receive enquiries, reply with priced offers and lead days",
-      "Offer → invoice → paid → fulfilled, all in one thread",
-    ],
   },
 ];
 
@@ -190,11 +145,6 @@ const IMPACT = [
   { t: "Local expertise compounds", d: "Every project builds sequencing and bioinformatics capacity inside the country." },
 ];
 
-const STAGES = [
-  "Accessioning", "Sample QC", "Library prep", "Library QC",
-  "Sequencing", "Data processing", "Analysis", "Report review",
-];
-
 /* ---------------------------------- page ---------------------------------- */
 
 export function ProjectsPage() {
@@ -251,20 +201,6 @@ export function ProjectsPage() {
         </div>
       </section>
 
-      {/* numbers */}
-      <section className="border-b border-line bg-paper py-12">
-        <div className="container-x">
-          <Stagger className="grid grid-cols-2 gap-6 lg:grid-cols-4">
-            {STATS.map((s) => (
-              <Reveal key={s.l}>
-                <p className="font-display text-[34px] font-medium tracking-tight text-ink">{s.v}</p>
-                <p className="mt-1 text-[13px] text-muted">{s.l}</p>
-              </Reveal>
-            ))}
-          </Stagger>
-        </div>
-      </section>
-
       {/* the problem */}
       <section className="border-b border-line bg-surface py-16">
         <div className="container-x">
@@ -285,11 +221,11 @@ export function ProjectsPage() {
 
       {/* the solution */}
       <section className="border-b border-line bg-paper py-16">
-        <div className="container-x grid items-center gap-10 lg:grid-cols-[1fr_1.1fr]">
+        <div className="container-x">
           <Reveal>
             <p className="eyebrow">The solution</p>
-            <h2 className="h-section mt-3">One platform. One record. RFQ to report.</h2>
-            <p className="mt-4 text-[14.5px] leading-relaxed text-body">
+            <h2 className="h-section mt-3 max-w-2xl">One platform. One record. RFQ to report.</h2>
+            <p className="mt-4 max-w-2xl text-[14.5px] leading-relaxed text-body">
               The Gateway doesn't run a lab — it runs the marketplace. Researchers post what
               they need, verified providers compete for it blind, and the winning lab delivers
               inside a single project record: shipping, QC, stages, files and invoices — with
@@ -300,32 +236,6 @@ export function ProjectsPage() {
                 <Link href="/contact" className="btn-primary">Request a quote <ArrowRight className="size-4" /></Link>
               </span>
               <Link href="/partners" className="btn-outline">Meet the providers</Link>
-            </div>
-          </Reveal>
-          <Reveal delay={1}>
-            <div className="card p-6 sm:p-8">
-              <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-muted">Inside the lab — visible to the customer</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {STAGES.map((s, i) => (
-                  <span key={s} className="inline-flex items-center gap-1.5 rounded-full border border-line bg-paper-2 px-3 py-1.5 text-[12px] font-medium text-body">
-                    <span className="grid size-4 place-items-center rounded-full bg-navy text-[9px] font-bold text-white">{i + 1}</span>
-                    {s}
-                  </span>
-                ))}
-              </div>
-              <div className="mt-5 space-y-2.5 border-t border-line pt-5 text-[12.5px]">
-                {[
-                  ["Quote status", "Sealed until award — blind competition"],
-                  ["QC verdicts", "PASS / PARTIAL / FAIL with real metrics"],
-                  ["Result files", "Draft → released — 403 until then"],
-                  ["SLA due date", "Accepted date + guaranteed TAT"],
-                ].map(([k, v]) => (
-                  <div key={k} className="flex items-center justify-between gap-4">
-                    <span className="font-medium text-muted">{k}</span>
-                    <span className="text-right font-medium text-ink">{v}</span>
-                  </div>
-                ))}
-              </div>
             </div>
           </Reveal>
         </div>
@@ -349,44 +259,6 @@ export function ProjectsPage() {
                 </div>
                 <h3 className="mt-4 text-[15px] font-semibold text-ink">{s.t}</h3>
                 <p className="mt-2 flex-1 text-[12px] leading-relaxed text-muted">{s.d}</p>
-              </div>
-            ))}
-          </Stagger>
-        </div>
-      </section>
-
-      {/* portals */}
-      <section className="border-b border-line bg-paper py-16">
-        <div className="container-x">
-          <Reveal>
-            <p className="eyebrow">The build</p>
-            <h2 className="h-section mt-3">Three portals, one marketplace</h2>
-            <p className="mt-3 max-w-2xl text-[14.5px] leading-relaxed text-muted">
-              Customers, labs and suppliers each get a purpose-built surface —
-              same marketplace, different truth.
-            </p>
-          </Reveal>
-          <Stagger className="mt-9 grid gap-5 md:grid-cols-3">
-            {PORTALS.map((p) => (
-              <div key={p.name} className="card card-hover p-6">
-                <div className="flex items-center gap-3">
-                  <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-navy text-mint">
-                    <p.icon className="size-5" strokeWidth={1.8} />
-                  </span>
-                  <div>
-                    <h3 className="text-[16px] font-semibold text-ink">{p.name}</h3>
-                    <p className="text-[12px] text-muted">{p.tag}</p>
-                  </div>
-                  <code className="ml-auto rounded-md bg-paper-2 px-2 py-1 text-[11px] font-medium text-muted">{p.href}</code>
-                </div>
-                <ul className="mt-4 space-y-2 border-t border-line pt-4">
-                  {p.points.map((pt) => (
-                    <li key={pt} className="flex items-start gap-2.5 text-[13px] leading-relaxed text-body">
-                      <BadgeCheck className="mt-0.5 size-4 shrink-0 text-(--st-green-fg)" />
-                      {pt}
-                    </li>
-                  ))}
-                </ul>
               </div>
             ))}
           </Stagger>
